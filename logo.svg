@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Gradiente Cyan a Azul Eléctrico -->
+    <linearGradient id="cyanBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+
+    <!-- Gradiente Ámbar a Oro Solar -->
+    <linearGradient id="amberGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+
+    <!-- Gradiente Azul Marino Profundo con Translucidez -->
+    <linearGradient id="boxFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f2038" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Filtro de Resplandor Neón -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- ESFERA / RED GLOBAL EXTERIOR -->
+  <!-- Anillo exterior y meridianos -->
+  <circle cx="100" cy="100" r="82" stroke="url(#cyanBlue)" stroke-width="3" stroke-dasharray="16 8 8 8" opacity="0.45"/>
+  <ellipse cx="100" cy="100" rx="46" ry="82" stroke="url(#cyanBlue)" stroke-width="2" opacity="0.35"/>
+  <path d="M 22 84 C 58 66 142 66 178 84" stroke="url(#amberGold)" stroke-width="2.5" opacity="0.7"/>
+  <path d="M 22 116 C 58 134 142 134 178 116" stroke="url(#cyanBlue)" stroke-width="2.5" opacity="0.5"/>
+
+  <!-- ESCUDO DE BASE / TRAZABILIDAD ADUANERA -->
+  <path d="M 52 115 C 52 152 100 178 100 178 C 100 178 148 152 148 115" 
+        stroke="url(#amberGold)" stroke-width="5" stroke-linecap="round" filter="url(#neonGlow)"/>
+
+  <!-- CONTENEDOR ISOMÉTRICO (Carga y Comercio Exterior) -->
+  <!-- Cara Superior -->
+  <polygon points="100,52 142,75 100,98 58,75" fill="url(#boxFill)" stroke="url(#cyanBlue)" stroke-width="3.5" stroke-linejoin="round"/>
+  
+  <!-- Hendidura superior -->
+  <polygon points="100,59 133,76 100,92 67,76" fill="none" stroke="url(#cyanBlue)" stroke-width="1.8" opacity="0.6"/>
+
+  <!-- Cara Izquierda con Ranuras de Contenedor -->
+  <polygon points="58,75 100,98 100,146 58,123" fill="url(#boxFill)" stroke="url(#cyanBlue)" stroke-width="3.5" stroke-linejoin="round"/>
+  <line x1="68" y1="84" x2="68" y2="128" stroke="url(#cyanBlue)" stroke-width="2.5" opacity="0.8"/>
+  <line x1="79" y1="89" x2="79" y2="134" stroke="url(#cyanBlue)" stroke-width="2.5" opacity="0.8"/>
+  <line x1="89" y1="94" x2="89" y2="140" stroke="url(#cyanBlue)" stroke-width="2.5" opacity="0.8"/>
+
+  <!-- Cara Derecha con Ranuras de Contenedor -->
+  <polygon points="100,98 142,75 142,123 100,146" fill="url(#boxFill)" stroke="url(#cyanBlue)" stroke-width="3.5" stroke-linejoin="round"/>
+  <line x1="111" y1="94" x2="111" y2="140" stroke="url(#cyanBlue)" stroke-width="2.5" opacity="0.8"/>
+  <line x1="121" y1="89" x2="121" y2="134" stroke="url(#cyanBlue)" stroke-width="2.5" opacity="0.8"/>
+  <line x1="132" y1="84" x2="132" y2="128" stroke="url(#cyanBlue)" stroke-width="2.5" opacity="0.8"/>
+
+  <!-- Vértice Central Iluminado -->
+  <line x1="100" y1="98" x2="100" y2="146" stroke="#ffffff" stroke-width="2.5" opacity="0.9"/>
+  <circle cx="100" cy="52" r="3.5" fill="#fde047" filter="url(#neonGlow)"/>
+</svg>
