@@ -20,7 +20,7 @@ async function init(){
     console.error(err);
     return;
   }
-  footNote.textContent = 'Datos cargados localmente en el navegador · sin conexión a ningún servidor';
+  footNote.textContent = 'los pits 🏎️';
 
   const ciudades = Object.keys(RAW.ciudades);
 
