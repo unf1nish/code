@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consulta de Códigos Aduaneros</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Códigos Aduaneros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="page">
 
+  <!-- CABECERA PRINCIPAL CON LOGO -->
   <header class="hero">
-    <div class="eyebrow-row"><span class="stamp-dot"></span>Aduanas de Cartagena · Buenaventura · Medellín · Bogotá · Urabá</div>
-    <h1 class="title">Consulta de códigos <em>aduaneros</em></h1>
+    <div class="hero-brand">
+      <img src="logo.png" alt="Logotipo Aduanero" class="hero-logo">
+      <div class="hero-text">
+        <div class="eyebrow-row">
+          <span class="stamp-dot"></span>
+          <span>Aduanas de Cartagena · Buenaventura · Medellín · Bogotá · Urabá</span>
+        </div>
+        <h1 class="title">Consulta de códigos <em>aduaneros</em></h1>
+      </div>
+    </div>
+    
     <p class="lede">Encuentra el código asignado a un país, un depósito o una transportadora en cada aduana, sin depender de la hoja de cálculo original.</p>
+    
     <div class="stat-row">
-      <div class="stat"><span class="num" id="statPaises">0</span><span class="lbl">Países</span></div>
-      <div class="stat"><span class="num" id="statDepositos">0</span><span class="lbl">Depósitos</span></div>
-      <div class="stat"><span class="num" id="statTransportadoras">0</span><span class="lbl">Transportadoras</span></div>
-      <div class="stat"><span class="num" id="statAduanas">0</span><span class="lbl">Aduanas</span></div>
+      <div class="stat">
+        <span class="num" id="statPaises">0</span>
+        <span class="lbl">Países</span>
+      </div>
+      <div class="stat">
+        <span class="num" id="statDepositos">0</span>
+        <span class="lbl">Depósitos</span>
+      </div>
+      <div class="stat">
+        <span class="num" id="statTransportadoras">0</span>
+        <span class="lbl">Transportadoras</span>
+      </div>
+      <div class="stat">
+        <span class="num" id="statAduanas">0</span>
+        <span class="lbl">Aduanas</span>
+      </div>
     </div>
   </header>
 
-  <!-- SECCIÓN 1: PAÍSES -->
-  <section class="block accent-teal" id="section-paises">
+  <!-- SECCIÓN 1: PAÍSES (Acento Azul del Logo) -->
+  <section class="block accent-blue" id="section-paises">
     <div class="block-head">
-      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9s1.3-6.4 3.8-9z"/></svg>Países</h2>
+      <h2>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9s1.3-6.4 3.8-9z"/>
+        </svg>
+        Países
+      </h2>
       <span class="block-note">Código de país, sin filtro de aduana</span>
     </div>
     <div class="panel">
       <div class="controls">
         <div class="field">
-          <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+          </svg>
           <input type="text" id="inputPaises" placeholder="Buscar país, por ejemplo: Alemania, Perú, 023...">
         </div>
       </div>
@@ -42,21 +73,31 @@
     </div>
   </section>
 
-  <!-- SECCIÓN 2 y 3: DEPÓSITOS / TRANSPORTADORAS -->
+  <!-- SECCIONES 2 y 3: DEPÓSITOS Y TRANSPORTADORAS -->
   <div class="two-col">
-    <section class="block accent-gold" id="section-depositos">
+    <!-- DEPÓSITOS (Acento Amarillo/Oro del Logo) -->
+    <section class="block accent-amber" id="section-depositos">
       <div class="block-head">
-        <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-6 9 6"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Depósitos</h2>
+        <h2>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 10l9-6 9 6"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>
+          </svg>
+          Depósitos
+        </h2>
       </div>
       <div class="panel">
         <div class="controls">
-          <select class="aduana" id="selectDepositos">
-            <option value="TODAS">Todas las aduanas</option>
-          </select>
+          <div class="select-wrap">
+            <select class="aduana" id="selectDepositos">
+              <option value="TODAS">Todas las aduanas</option>
+            </select>
+          </div>
         </div>
         <div class="controls">
           <div class="field">
-            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+            </svg>
             <input type="text" id="inputDepositos" placeholder="Buscar depósito...">
           </div>
         </div>
@@ -65,19 +106,29 @@
       </div>
     </section>
 
-    <section class="block accent-coral" id="section-transportadoras">
+    <!-- TRANSPORTADORAS (Acento Magenta/Carmesí del Logo) -->
+    <section class="block accent-magenta" id="section-transportadoras">
       <div class="block-head">
-        <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 16V8a1 1 0 011-1h9v9"/><path d="M13 10h5l3 3v3h-8z"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg>Transportadoras</h2>
+        <h2>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 16V8a1 1 0 011-1h9v9"/><path d="M13 10h5l3 3v3h-8z"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/>
+          </svg>
+          Transportadoras
+        </h2>
       </div>
       <div class="panel">
         <div class="controls">
-          <select class="aduana" id="selectTransportadoras">
-            <option value="TODAS">Todas las aduanas</option>
-          </select>
+          <div class="select-wrap">
+            <select class="aduana" id="selectTransportadoras">
+              <option value="TODAS">Todas las aduanas</option>
+            </select>
+          </div>
         </div>
         <div class="controls">
           <div class="field">
-            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+            </svg>
             <input type="text" id="inputTransportadoras" placeholder="Buscar transportadora...">
           </div>
         </div>
